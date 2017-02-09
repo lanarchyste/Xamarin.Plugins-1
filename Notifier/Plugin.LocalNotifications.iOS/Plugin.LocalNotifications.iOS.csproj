@@ -100,13 +100,11 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\Plugin.LocalNotifications.iOSClassic\LocalNotificationsImplementation.cs">
-      <Link>LocalNotificationsImplementation.cs</Link>
-    </Compile>
     <Compile Include="..\Plugin.LocalNotifications\CrossLocalNotifications.cs">
       <Link>CrossLocalNotifications.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LocalNotificationsImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

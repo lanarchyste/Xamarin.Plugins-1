@@ -108,6 +108,10 @@ namespace Plugin.LocalNotifications
             notificationManager.Cancel(id);
         }
 
+        public void Clear(int id)
+        {
+        }
+
         private Intent CreateIntent(int id)
         {
             return new Intent(Application.Context, typeof(ScheduledAlarmHandler))

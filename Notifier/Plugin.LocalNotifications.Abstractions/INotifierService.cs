@@ -29,5 +29,11 @@ namespace Plugin.LocalNotifications.Abstractions
         /// </summary>
         /// <param name="id">Id of the scheduled notification you'd like to cancel</param>
         void Cancel(int id);
+
+        /// <summary>
+        /// Clear a local notification which is delivered from notification center
+        /// </summary>
+        /// <param name="id">Id of the scheduled notification you'd like to cancel</param>
+        void Clear(int id);
     }
 }
