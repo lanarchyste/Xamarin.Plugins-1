@@ -66,6 +66,9 @@ namespace Plugin.LocalNotifications
         /// <param name="id">Id of the scheduled notification you'd like to cancel</param>
         public void Cancel(int id)
         {
+            if (UIApplication.SharedApplication == null)
+                return;
+            
             var notifications = UIApplication.SharedApplication.ScheduledLocalNotifications;
             var notification = notifications.Where(n => n.UserInfo.ContainsKey(NSObject.FromObject(NotificationKey)))
                 .FirstOrDefault(n => n.UserInfo[NotificationKey].Equals(NSObject.FromObject(id)));
@@ -78,6 +81,9 @@ namespace Plugin.LocalNotifications
 
         public void Clear(int id)
         {
+            if (UNUserNotificationCenter.Current == null)
+                return;
+            
             UNUserNotificationCenter.Current.GetDeliveredNotifications(notifications =>
             {
                 foreach (var notification in notifications)
